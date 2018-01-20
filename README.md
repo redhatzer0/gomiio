@@ -1,4 +1,7 @@
 # gomiio
+
+**Code Status: *works for me***
+
 Control Xiaomi vacuum cleaner with Alexa
 
 This emulates a Hue bridge, with the vacuum as an emulated light. You can turn the vacuum on/off. By adjusting the brightness of the emulated light, you'll change the fanspeed on the vacuum
