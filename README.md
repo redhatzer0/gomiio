@@ -8,6 +8,13 @@ This emulates a Hue bridge, with the vacuum as an emulated light. You can turn t
 
 If you crosscompile it for linux/arm ( *GOOS=linux GOARCH=arm go build* ), you can copy the binary to the robot and run it directly there. (In this case, it reads the needed device token directly from the filesystem)
 
+You can then have it started up on boot, by adding a line like
+
+    GoMIIO,setsid /opt/rockrobo/gomiio&,0,3,2
+
+to /opt/rockrobo/watchdog/ProcessList.conf (you need to change the path to where you have copied the binary of course...)
+
+
 You can also run this on a different computer, as long as it's able to connect directly to the robot. In this case, you need to create a file called "data.json" in the same dir as the binary. The content should look like:
 
     {"ADDR":"192.168.1.50:54321","TOKEN":"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"}
